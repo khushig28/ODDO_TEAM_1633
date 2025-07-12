@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "../styles/Login.css"; // Reuse the same CSS for consistency
 
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -13,21 +14,47 @@ function Signup() {
       alert("Registered successfully!");
       navigate("/");
     } catch (err) {
-      alert(err.response.data.msg || "Registration failed");
+      alert(err.response?.data?.msg || "Registration failed");
     }
   };
-
-  return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} />
-        <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
-        <input type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  );
+return (
+  <div className="login-container">
+    <form className="login-box" onSubmit={handleSubmit}>
+      <h2>Create an Account</h2>
+      <div className="input-group">
+        <span className="icon">👤</span>
+        <input
+          type="text"
+          placeholder="Name"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+      </div>
+      <div className="input-group">
+        <span className="icon">📧</span>
+        <input
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
+      </div>
+      <div className="input-group">
+        <span className="icon">🔒</span>
+        <input
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+        />
+      </div>
+      <button type="submit">Register</button>
+      <div className="signup-link">
+        Already have an account? <Link to="/">Login</Link>
+      </div>
+    </form>
+  </div>
+);
 }
 
 export default Signup;

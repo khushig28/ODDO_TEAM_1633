@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../styles/Login.css"; // Adjust path if needed
+import { Link } from "react-router-dom";
 
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -15,17 +17,41 @@ function Login() {
       alert("Login successful");
       navigate("/dashboard");
     } catch (err) {
-      alert(err.response.data.msg || "Login failed");
+      alert(err.response?.data?.msg || "Login failed");
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
-        <input type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
-        <button type="submit">Login</button>
+    <div className="login-container">
+      <form className="login-box" onSubmit={handleLogin}>
+        <div className="input-group">
+          <span className="icon">👤</span>
+          <input
+            type="text"
+            placeholder="Username"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+          />
+        </div>
+        <div className="input-group">
+          <span className="icon">🔒</span>
+          <input
+            type="password"
+            placeholder="********"
+            value={form.password}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+          />
+        </div>
+        <div className="options">
+          <label>
+            <input type="checkbox" /> Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit">LOGIN</button>
+        <div className="signup-link">
+          Don&apos;t have an account? <Link to="/signup">Create new account</Link>
+        </div>
       </form>
     </div>
   );
