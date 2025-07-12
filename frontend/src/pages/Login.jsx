@@ -22,7 +22,8 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
+  
+    <div className="app-background login-container">
       <form className="login-box" onSubmit={handleLogin}>
         <div className="input-group">
           <span className="icon">👤</span>

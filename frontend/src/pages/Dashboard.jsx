@@ -15,6 +15,8 @@ function Dashboard() {
     const fetchStats = async () => {
       const res = await axios.get("http://localhost:5000/api/dashboard-stats");
       setStats(res.data);
+      console.log(res.data);
+
     };
     fetchStats();
   }, []);
