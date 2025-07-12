@@ -1,4 +1,4 @@
-<h1> ODDO HACKATHON </h1> <br/>
+<b><h1> ODDO HACKATHON </h1></b> <br/>
 TEAM ID : 1633 <br/>
 PROBLEM STATEMNET : ReWear – Community Clothing Exchange <br/>
 TEAM MEMBERS : <br/>
