@@ -1,0 +1,37 @@
+.dashboard {
+  text-align: center;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.stat-box {
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  min-width: 150px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.reviews {
+  background: #f0f0f0;
+  padding: 30px;
+  margin: 20px;
+}
+
+.review {
+  margin: 10px auto;
+  font-style: italic;
+  color: #333;
+  max-width: 600px;
+}

@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #2c2c2c, #111);
-}
+
 
 .login-container {
   display: flex;
