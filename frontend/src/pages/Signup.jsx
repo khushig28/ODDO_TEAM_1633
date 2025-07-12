@@ -18,7 +18,7 @@ function Signup() {
     }
   };
 return (
-  <div className="login-container">
+  <div className="app-background login-container">
     <form className="login-box" onSubmit={handleSubmit}>
       <h2>Create an Account</h2>
       <div className="input-group">
